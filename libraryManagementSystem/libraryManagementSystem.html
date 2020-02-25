@@ -1,0 +1,835 @@
+
+<!-- saved from url=(0045)http://localhost/5th/LibraryManagementSystem/ -->
+<html><!--Head section--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>IBIT Books</title>
+        <link rel="icon" href="http://localhost/5th/LibraryManagementSystem/assets/frontend/img/favicon.ico">
+        <link rel="stylesheet" href="./IBIT Books_files/w3.css">
+        <link rel="stylesheet" href="./IBIT Books_files/bootstrap.min.css">
+        <link rel="stylesheet" href="./IBIT Books_files/font-awesome.min.css">
+        <script src="./IBIT Books_files/jquery.min.js.download"></script>
+        <script src="./IBIT Books_files/bootstrap.min.js.download"></script>
+    <style>
+
+        .container-fluid{
+            padding-top:70px;
+            padding-bottom:70px;
+        }
+        .navbar {
+            background:black;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            font-weidth:bold;
+            letter-spacing: 1px;			
+        }
+
+        .navbar-nav li a:hover {
+           // color: tomato !important;
+        }
+        .bg-1{
+            background:black;
+            background-image:url('assets/frontend/img/bg/cloud.png'), url('assets/frontend/img/bg/library-bg-2.jpg');	
+            background-repeat:repeat-x, no-repeat;
+            background-size:contain, cover;
+            background-attachment:local, fixed;
+            background-position: center bottom, center bottom; 
+            //color:#00F51C;
+			color:white;
+            font-weidth:bold;
+            font-family:Eras Bold ITC;
+        }
+        .bg-1 .text{
+            opacity: 0.5;
+        }
+        .bg-1 .text:hover{
+            opacity: 0.8;
+        }
+        .bg-1:hover{					
+            background-image:url('assets/frontend/img/bg/cloud.png'), url('assets/frontend/img/bg/bg1.jpg');	
+            background-repeat:repeat-x, no-repeat;
+            background-size:contain, cover;
+            background-attachment:local, fixed;
+            background-position: center bottom, center bottom; 
+        }        
+        .bg-2{
+            background:#6A5ACD;
+            color:#FFFFFF;			
+            background-image:url('assets/frontend/img/bg/section-bg-1.png'), url('assets/frontend/img/bg/library-bg-2.jpg');	
+            background-repeat:no-repeat, no-repeat;
+            background-size:100% 100%, cover;
+            background-attachment:local, fixed;
+            background-position: left top, center; 
+            width:100%;
+            //min-height:auto;
+            min-height: 400px;
+        }
+        .bg-3{
+            background: #6A5ACD;
+            color:#843030;
+            font-weight: bold;
+            background-image: url('assets/frontend/img/bg/section-bg-2.png');
+            background-size: cover;
+            background-position: left top;
+            width: 100%;
+            min-height: 400px;
+        }
+        .bg-4{
+            background: #6A5ACD;
+            color:#843030;
+            font-weight: bold;
+            background-image: url('assets/frontend/img/bg/section-bg-3.png');
+            background-size: cover;
+            background-position: left top;
+            width: 100%;
+            min-height: 400px;            
+        }
+        .bg-library{
+            background-color: #6A5ACD;
+        }
+        .bg-library .thumbnail{
+            background-color:#8C79D7 ;
+        }
+        .bg-library a{
+            color:white;
+            font-weight: bold;
+            text-decoration:none;
+        }
+        .bg-library img{
+            width: 90%;
+        }
+        .bg-footer{
+            background:black;
+            color:#FFFFFF;
+        }
+		
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      animation-duration: 2s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+    </style></head>  
+    <!--style section-->  
+        
+    <!--body section-->
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+        <!--nav section-->
+        <nav class="navbar navbar-inverse" style="position:sticky; top:0; z-index:99;">
+            <div class="container">
+                <!--nav header-->
+                <div class="navbar-header">
+                    <div class="navbar-brand w3-animate-left"> <!-- <span class="glyphicon glyphicon-globe"></span> --> 🌏Library Management System</div>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>			  
+                </div>
+                <div class="collapse navbar-collapse w3-animate-right" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right"> 
+                        <li><a href="http://localhost/5th/LibraryManagementSystem/"><!-- <span class="glyphicon glyphicon-home"></span> -->🏡Home</a></li>
+                        <li><a href="http://localhost/5th/LibraryManagementSystem/#notice"><!-- <span class="glyphicon glyphicon-bell"></span> -->🔔Notice</a></li>
+                        <li class="dropdown active">
+                            <a data-toggle="dropdown" href="http://localhost/5th/LibraryManagementSystem/#"><!--<span class="glyphicon glyphicon-book"></span>-->📚Books <span class="caret"></span> 
+                                </a><ul class="dropdown-menu"><a data-toggle="dropdown" href="http://localhost/5th/LibraryManagementSystem/#"> 
+                                    </a><li class="active"><a data-toggle="dropdown" href="http://localhost/5th/LibraryManagementSystem/#"></a><a href="http://localhost/5th/LibraryManagementSystem/#library">Library</a></li>									
+										
+                                    <li><a href="http://localhost/5th/LibraryManagementSystem/admin/givenBook.php">জমা</a></li>
+                                    <li><a href="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook">নেওয়া</a></li>
+									                                </ul>
+                            
+                        </li>
+						<!--
+						<li><a href="#"> <span class="glyphicon glyphicon-search"></span></a></li>
+						-->
+						<li><a href="http://localhost/5th/LibraryManagementSystem/#search"><!-- <span class="glyphicon glyphicon-search"></span> -->🔍Search</a></li>
+							
+                        <li class="">
+                            <a data-toggle="dropdown" href="http://localhost/5th/LibraryManagementSystem/" aria-expanded="false">
+                                <!-- <img class="img-circle"  src="assets/backend/img/user/1.jpg" style="" height="25px" width="25px"></img> -->
+								
+								<div style=" float:left; background:white; border-radius:50%; width:25px; height:25px; overflow:hidden;">
+									<img src="./IBIT Books_files/1.jpg" class="img img-responsive" style="width:25px;">
+								</div>
+                                <span style="margin-top:35%;" class="caret"></span> 
+                                </a><ul class="dropdown-menu"><a data-toggle="dropdown" href="http://localhost/5th/LibraryManagementSystem/"> 
+                                    </a><li><a data-toggle="dropdown" href="http://localhost/5th/LibraryManagementSystem/"></a><a class="btn btn-success"><b> Zahid Hasan </b></a></li>   
+                                    <li><a href="http://localhost/5th/LibraryManagementSystem/admin/"> Dashboard </a></li>   
+									<li><a href="http://localhost/5th/LibraryManagementSystem/admin/adminProfile.php">Profile</a></li>
+									<li><a href="http://localhost/5th/LibraryManagementSystem/admin/dashboard.php?logout=logout">log out</a></li>
+                                </ul>
+                            
+                        </li>
+						                        
+                    </ul>
+                </div>
+            </div>
+        </nav>	
+<!--header section-->
+<!-- bg 1-->
+        <div class="container-fluid text-center bg-1"> 
+            <div class="row">
+                <div class="col-sm-12"> 
+                    <!--
+                    <img src="assets/frontend/img/favicon.ico" height='100' alt="" />	
+                    -->
+                    <div class="text w3-animate-zoom" style="background: #6A5ACD; float: none;  overflow: visible; border-radius: 15px; position: relative;">
+                        <h1 style="font-size:80px; opacity: 1; " class="">Library Management System</h1>
+                        <address>only for IBIT Campas</address>
+                    </div>
+                </div>			
+            </div>			
+        </div>
+<!--About section-->
+<!-- bg 2-->        
+        <div class="container-fluid text-left bg-2" id="about"> 
+            <div class="row">	
+                <div class="col-md-1"></div>
+                <div class="col-md-2 w3-animate-right"> 
+                    <p> 
+                        পড়ো তোমার প্রভুর নামে
+
+                    </p>	
+                    <p> 
+                        যিনি সৃষ্টি করেছেন তোমাকে
+
+                    </p> 
+					<p id="notice"></p>
+					<p id="search"></p>
+                </div>
+                <div class="col-md-6"> 
+                </div>
+                <div class="col-md-3"> 
+                </div>
+            </div>
+        </div>
+
+<!--Books library Gallery-->
+        <div id="library" class="contaniner">			
+            <div class="row bg-library"> 
+				<div class="row"> 
+					<div class="col-sm-12"> 
+						<div> 
+							<marquee style="color:white;">
+								<b>আগামী ১/২/২০২০ তারিখের ভিতরে পুরাতন বই জমা দিতে হবে।</b>
+								<b>আগামী ২০/২/২০২০ তারিখের ভিতরে নতুন বই নিতে হবে।</b>
+							</marquee>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center"> 
+					<div class="col-sm-8"></div>
+					<div class="col-sm-4">
+						
+						<div class="input-group">
+							<div class="btn btn-lg bnt-primary"><input id="myInput" style="border-radius:15px;" placeholder="search..." type="search"></div>
+						</div>
+					</div>
+				</div>
+				<div style="margin:10px;" id="myDIV"> 
+					<div class="row">					
+						 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65811</p>
+															 <p>Social Science</p>
+															 <p>
+															 Avaible
+															 <span class="badge">196</span>
+															 Total
+															 <span class="badge">200</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65811">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65812</p>
+															 <p>Graphics designâ€II</p>
+															 <p>
+															 Avaible
+															 <span class="badge">80</span>
+															 Total
+															 <span class="badge">80</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65812">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65913</p>
+															 <p> Chemistry</p>
+															 <p>
+															 Avaible
+															 <span class="badge">100</span>
+															 Total
+															 <span class="badge">100</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65913">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>66632</p>
+															 <p>Web Design</p>
+															 <p>
+															 Avaible
+															 <span class="badge">150</span>
+															 Total
+															 <span class="badge">150</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="66632">Get</button>
+															</form>
+											 </div>
+										 </div>
+														</div><div class="row"> 
+																				 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65931</p>
+															 <p>Mathematicsâ€3</p>
+															 <p>
+															 Avaible
+															 <span class="badge">180</span>
+															 Total
+															 <span class="badge">180</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65931">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>66823</p>
+															 <p> Analog Electronics</p>
+															 <p>
+															 Avaible
+															 <span class="badge">120</span>
+															 Total
+															 <span class="badge">120</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="66823">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65722</p>
+															 <p>Communicative English</p>
+															 <p>
+															 Avaible
+															 <span class="badge">150</span>
+															 Total
+															 <span class="badge">150</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65722">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>66623</p>
+															 <p>Graphics Design-I</p>
+															 <p>
+															 Avaible
+															 <span class="badge">50</span>
+															 Total
+															 <span class="badge">50</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="66623">Get</button>
+															</form>
+											 </div>
+										 </div>
+														</div><div class="row"> 
+																				 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>66622</p>
+															 <p>IT support System-I</p>
+															 <p>
+															 Avaible
+															 <span class="badge">50</span>
+															 Total
+															 <span class="badge">50</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="66622">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65921</p>
+															 <p> Mathematics-2</p>
+															 <p>
+															 Avaible
+															 <span class="badge">200</span>
+															 Total
+															 <span class="badge">200</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65921">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>66621</p>
+															 <p>Database Application</p>
+															 <p>
+															 Avaible
+															 <span class="badge">50</span>
+															 Total
+															 <span class="badge">50</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="66621">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65711</p>
+															 <p>Bangla</p>
+															 <p>
+															 Avaible
+															 <span class="badge">200</span>
+															 Total
+															 <span class="badge">200</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65711">Get</button>
+															</form>
+											 </div>
+										 </div>
+														</div><div class="row"> 
+																				 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65812</p>
+															 <p>Physical education &amp; life skills development</p>
+															 <p>
+															 Avaible
+															 <span class="badge">150</span>
+															 Total
+															 <span class="badge">150</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65812">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65712</p>
+															 <p>English</p>
+															 <p>
+															 Avaible
+															 <span class="badge">200</span>
+															 Total
+															 <span class="badge">200</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65712">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>66712</p>
+															 <p>Electrical engineering fundamentals</p>
+															 <p>
+															 Avaible
+															 <span class="badge">150</span>
+															 Total
+															 <span class="badge">150</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="66712">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65912</p>
+															 <p>Physicsâ€1</p>
+															 <p>
+															 Avaible
+															 <span class="badge">100</span>
+															 Total
+															 <span class="badge">100</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65912">Get</button>
+															</form>
+											 </div>
+										 </div>
+														</div><div class="row"> 
+																				 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>66611</p>
+															 <p>Computer application</p>
+															 <p>
+															 Avaible
+															 <span class="badge">50</span>
+															 Total
+															 <span class="badge">50</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="66611">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>65911</p>
+															 <p>Mathematicsâ€1</p>
+															 <p>
+															 Avaible
+															 <span class="badge">150</span>
+															 Total
+															 <span class="badge">150</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="65911">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/defaultBookImage.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/defaultBookImage.jpg">
+													 </a>
+													 <a>
+															 <p>111111</p>
+															 <p>bd</p>
+															 <p>
+															 Avaible
+															 <span class="badge">100</span>
+															 Total
+															 <span class="badge">100</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="111111">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/py.png" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/py.png">
+													 </a>
+													 <a>
+															 <p>6549</p>
+															 <p>python</p>
+															 <p>
+															 Avaible
+															 <span class="badge">10</span>
+															 Total
+															 <span class="badge">10</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="6549">Get</button>
+															</form>
+											 </div>
+										 </div>
+														</div><div class="row"> 
+																				 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/2.jpg" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/2.jpg">
+													 </a>
+													 <a>
+															 <p>123011</p>
+															 <p>programming </p>
+															 <p>
+															 Avaible
+															 <span class="badge">50</span>
+															 Total
+															 <span class="badge">50</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="123011">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/airplane.png" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/airplane.png">
+													 </a>
+													 <a>
+															 <p>2000</p>
+															 <p>Operating system</p>
+															 <p>
+															 Avaible
+															 <span class="badge">50</span>
+															 Total
+															 <span class="badge">50</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="2000">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/css.ico" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/css.ico">
+													 </a>
+													 <a>
+															 <p>121212</p>
+															 <p>css</p>
+															 <p>
+															 Avaible
+															 <span class="badge">50</span>
+															 Total
+															 <span class="badge">50</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="121212">Get</button>
+															</form>
+											 </div>
+										 </div>
+																		 
+										<div class="col-md-3 text-center slideanim slide">
+											 <div class="thumbnail">
+													 <a href="./IBIT Books_files/bat color.png" target="_blank">
+															 <img style="height:200px; width:auto;" src="./IBIT Books_files/bat color.png">
+													 </a>
+													 <a>
+															 <p>66652</p>
+															 <p>Pcb</p>
+															 <p>
+															 Avaible
+															 <span class="badge">50</span>
+															 Total
+															 <span class="badge">50</span>
+															 </p>
+													 </a>
+															<form action="http://localhost/5th/LibraryManagementSystem/bookForm/index.php?getBook=getBook" method="post">
+																<button class="btn btn-info" type="submit" name="bookCode" value="66652">Get</button>
+															</form>
+											 </div>
+										 </div>
+														</div><div class="row"> 
+																									
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <!--footer-->
+        <footer class="container-fluid text-center bg-footer"> 
+
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4 text-left w3-animate-left">
+					<p>
+						devoloped by <b class="text-default"><a href="http://localhost/5th/LibraryManagementSystem/assets/backend/img/developer/1.jpg" target="_blank">Zahid Hasan</a></b>
+					</p>
+                </div>
+                <div class="col-sm-2 text-left w3-animate-right">
+					<h4 class="text-default" style="text-decoration:underline; color:tomato;">Team member</h4>
+					<address> 
+						<p class="text-success">Zahid hasan</p>
+						<p class="text-success">Abu raihan</p>
+						<p class="text-success">Safi uddin sanim</p>
+						<p class="text-danger">Nazir ahommed</p>
+						<p class="text-danger">Torikul islam</p>
+					</address>
+                </div>
+                <div class="col-sm-4 text-right w3-animate-right">
+                    <p>Copywrite <a class="text-info" href="http://localhost/5th/LibraryManagementSystem/copy.txt" target="_blank">©IBIT</a> 2019</p>
+                </div>
+            </div>
+
+        </footer>
+    
+	
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+	
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myDIV *").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</body></html>
